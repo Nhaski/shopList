@@ -1,128 +1,22 @@
 * {
   padding: 0;
-  margin: 0;
+  margin-left: 10px;
   box-sizing: border-box;
 }
-/* 
-.app {
-  width: 100vw;
-  height: 100vh;
+
+.cardProduct {
   display: flex;
+  width: 300px;
+  height: 30px;
+  border: 1px solid black;
   align-items: center;
-  justify-content: center;
+  margin-left: 0px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+
 }
 
-.card {
-  width: 200px;
-  height: 300px;
-  border-radius: 12px;
-  border: 5px solid;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  cursor: grab;
-} */
-
-.wrapper {
-    display: inline-block;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(71, 193, 112);
-}
-
-.header {
-    display: flex;
-    height: 10vh;
-    width: 100vw;
-    background-color: rgb(106, 106, 220);
-    justify-content: center;
-    align-items: center;
-}
-
-.leftBox {
-    display: flex;
-    margin-top: 30px;
-    margin-left: 15px;
-    width: 250px;
-    height: 350px;
-    float: left;
-    justify-content: start;
-    align-items: center;
-    border: 2px solid black;
-    border-radius: 7px;
-    flex-direction: column;
-}
-
-p{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    font-size: 20px;
-    color: rgb(8, 8, 8);
-}
-
-.firstName {
-    display: flex;
-    width: 230px;
-    height: 30px;
-    margin-top: 80px;
-    padding-left: 5px;
-    border: 1px solid black;
-    border-radius: 7px;
-    outline:none;
-}
-
-.lastName {
-    display: flex;
-    width: 230px;
-    height: 30px;
-    margin-top: 10px;
-    padding-left: 5px;
-    border: 1px solid black;
-    border-radius: 7px;
-    outline:none;
-}
-
-.age {
-    display: flex;
-    width: 230px;
-    height: 30px;
-    margin-top: 10px;
-    padding-left: 5px;
-    border: 1px solid black;
-    border-radius: 7px;
-    outline:none;
-}
-
-.registration {
-    display: flex;
-    width: 170px;
-    height: 30px;
-    margin-top: 30px;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    background-color: rgb(74, 151, 218);
-    font-size: 16px;
-    border-radius: 7px;
-    cursor: pointer;
-}
-.registration:hover {
-    background-color: bisque;
-    transition: all .3s linear;
-}
-
-.rightBox {
-    display: flex;
-    margin-top: 30px;
-    margin-right: 15px;
-    width: 400px;
-    height: 350px;
-    float: right;
-    justify-content: start;
-    align-items: center;
-    border: 2px solid black;
-    border-radius: 7px;
-    flex-direction: column;
+.cardProduct:hover {
+  background-color: rgb(43, 226, 119);
 }

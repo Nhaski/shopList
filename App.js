@@ -1,53 +1,52 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import './App.css';
-import { click } from "@testing-library/user-event/dist/click";
 
 
+function App() {
 
-function App () {
+  const textInput = useRef();
+  const [name, setName] = useState(''); // ввод в инпут
+  const [product, setProducts] = useState([]); // вывод продуктов
 
-let textInput = React.createRef(); 
-let firstname;
-let lastname;
+  // const [product, setProducts] = useState(JSON.parse(localStorage.getItem('nameOfProduct'))); // вывод продуктов
+  
+  const [nextId, setNextId] = useState(1); // id продуктов
 
-const [outFirstName, setOutFirstName] = useState('');
-const [outLastName, setOutLastName] = useState('');
+  const handleAddArtist = () => {
+    setProducts([
+          ...product,
+          { id: nextId, name: nextId + ':' + ' ' + name },
+      ]);
+      setNextId(nextId + 1); // Увеличиваем nextId на единицу
+      setName(''); // очищаем поле ввода
 
-function InputFirstName(event) {
-  firstname = event.target.value;
-}
+      // localStorage.setItem('nameOfProduct', JSON.stringify(product))
 
-function InputLastName(event) {
-  lastname = event.target.value;
-}
+      console.log(product);
+  };
 
-function klick() {
-  // setOutFirstName(firstname);
-  setOutLastName(textInput.current.value);
-  console.log(textInput.current.value);
-}
-
+  function clickDiv () {
+    console.log('клик');
+  }
 
   return (
-    <div className="wrapper">
-      <div className="header"> Это шапка сайта</div>
-
-      <div className="leftBox"> 
-        <p>Регистрация</p>
-        <input className="lastName" placeholder="Название продукта" ref={textInput} />
-        {/* <input className="age" type="number" min={0} max={100} placeholder="Введите возраст" /> */}
-        <button className="registration" onClick={klick}> Добавить в корзину </button>
-      
-      </div>
-
-      <div className="rightBox"> 
-        <p>Список покупока</p>
-        <p> Покупки: {outLastName} </p>
-        
-        
-      </div>
-    </div>
-  )
+      <>
+          <h1>Список покупок:</h1>
+          <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              ref={textInput}
+          />
+          <button onClick={handleAddArtist} >Добавить</button>
+          <ul>
+              {product.map((product) => (
+                  <div className="cardProduct" onClick={clickDiv} key={product.id} > {product.name} </div>
+              ))}
+          </ul>
+      </>
+  );
 }
 
 export default App;
+
+
